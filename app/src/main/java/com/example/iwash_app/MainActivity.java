@@ -1,5 +1,6 @@
 package com.example.iwash_app;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -70,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<TokenAPIModel> call, Response<TokenAPIModel> response) {
                 if (response.isSuccessful()){
-                    Toast.makeText(MainActivity.this, "Logado!", Toast.LENGTH_LONG).show();
+                    exibirNextActivity();
                 }else{
                     try {
                         Gson gson = new Gson();
@@ -90,6 +91,10 @@ public class MainActivity extends AppCompatActivity {
                 progressBarLogin.setVisibility(View.GONE);
             }
         });
+    }
+
+    private void exibirNextActivity() {
+        startActivity(new Intent(this, LavanderiasActivity.class));
     }
 
     private Usuario criarUsuario() {
