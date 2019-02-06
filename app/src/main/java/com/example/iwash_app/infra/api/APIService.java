@@ -2,6 +2,7 @@ package com.example.iwash_app.infra.api;
 
 
 import com.example.iwash_app.infra.api.endpoints.LavanderiaEndPoint;
+import com.example.iwash_app.infra.api.endpoints.SolicitacaoEndPoint;
 import com.example.iwash_app.infra.api.endpoints.TokenEndPoint;
 import com.example.iwash_app.infra.api.endpoints.UsuarioEndPoint;
 
@@ -19,6 +20,7 @@ public class APIService {
     public TokenEndPoint tokenEndPoint;
     public UsuarioEndPoint usuarioEndPoint;
     public LavanderiaEndPoint lavanderiaEndPoint;
+    public SolicitacaoEndPoint solicitacaoEndPoint;
 
     public APIService(String token){
 
@@ -37,6 +39,7 @@ public class APIService {
         tokenEndPoint = retrofit.create(TokenEndPoint.class);
         usuarioEndPoint = retrofit.create(UsuarioEndPoint.class);
         lavanderiaEndPoint = retrofit.create(LavanderiaEndPoint.class);
+        solicitacaoEndPoint = retrofit.create(SolicitacaoEndPoint.class);
     }
 
 }

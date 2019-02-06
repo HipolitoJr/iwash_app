@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.iwash_app.LavanderiaDetailActivity;
 import com.example.iwash_app.MainActivity;
 import com.example.iwash_app.R;
 import com.example.iwash_app.infra.utils.ConstantsWash;
@@ -65,7 +66,7 @@ public class LavanderiasAdapter extends RecyclerView.Adapter<LavanderiasAdapter.
         viewHolder.txtEndereco.setText(lavanderia.getEndereco());
 
         viewHolder.itemView.setOnClickListener(onclick -> {
-            Intent intent = new Intent(context, MainActivity.class);
+            Intent intent = new Intent(context, LavanderiaDetailActivity.class);
             intent.putExtra(ConstantsWash.LAVANDERIA_SELECT, lavanderia.getId());
             activity.startActivity(intent);
         });
