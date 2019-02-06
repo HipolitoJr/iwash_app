@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_margin="4dp"
+    android:padding="4dp"
+    app:layout_constraintCircleRadius="4dp"
+    android:background="@android:color/white"
+    android:elevation="4dp"
+    android:clickable="true"
+    android:foreground="?attr/selectableItemBackground">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="4dp"
+        android:layout_weight="4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txtDescricaoSolicitacao"
+            android:text="Lavagem das roupas tudinho"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:fontFamily="casual"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/txtLavanderiaDataSolicitacao"
+            android:text="Lavanderia do José em 24 de Fevereiro"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:fontFamily="casual"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:gravity="center"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imgStatusSolicitacao"
+            android:src="@drawable/icons8_watch_96"
+            android:layout_gravity="center"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</LinearLayout>

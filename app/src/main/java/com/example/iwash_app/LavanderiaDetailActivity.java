@@ -57,9 +57,10 @@ public class LavanderiaDetailActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<Solicitacao> call, Response<Solicitacao> response) {
                 if (response.isSuccessful()){
-                    startActivity(new Intent(LavanderiaDetailActivity.this, LavanderiasActivity.class));
+                    startActivity(new Intent(LavanderiaDetailActivity.this, SolicitacoesActivity.class));
                 }else{
                     try {
+                        Toast.makeText(LavanderiaDetailActivity.this, "data: " + solicitacao.getDataSolicitada().toString(), Toast.LENGTH_SHORT).show();
                         Toast.makeText(LavanderiaDetailActivity.this, "status code: " + response.code() + response.errorBody().string(), Toast.LENGTH_SHORT).show();
                     } catch (IOException e) {
                         e.printStackTrace();

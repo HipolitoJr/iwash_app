@@ -1,5 +1,6 @@
 package com.example.iwash_app;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -56,6 +57,8 @@ public class LavanderiasActivity extends AppCompatActivity
         initNavBar();
         preferencesWash = new PreferencesWash(this);
         apiService = new APIService(preferencesWash.getSavedString(ConstantsWash.TOKEN));
+
+        getLavanderias();
     }
 
     public void bindView(){
@@ -66,6 +69,8 @@ public class LavanderiasActivity extends AppCompatActivity
     }
 
     private void getLavanderias() {
+        progressLavanderias.setVisibility(View.VISIBLE);
+
         Call<List<Lavanderia>> lavanderiasCall = apiService.lavanderiaEndPoint.getLavanderias();
 
         lavanderiasCall.enqueue(new Callback<List<Lavanderia>>() {
@@ -104,10 +109,9 @@ public class LavanderiasActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_lavanderias) {
-            progressLavanderias.setVisibility(View.VISIBLE);
             getLavanderias();
-        } else if (id == R.id.nav_pedidos) {
-
+        } else if (id == R.id.nav_solicitacoes) {
+            startActivity(new Intent(this, SolicitacoesActivity.class));
         }
 
         drawer.closeDrawer(GravityCompat.START);
