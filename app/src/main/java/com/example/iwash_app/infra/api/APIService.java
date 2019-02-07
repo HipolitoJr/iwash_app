@@ -1,6 +1,7 @@
 package com.example.iwash_app.infra.api;
 
 
+import com.example.iwash_app.infra.api.endpoints.ConsumidorEndPoint;
 import com.example.iwash_app.infra.api.endpoints.LavanderiaEndPoint;
 import com.example.iwash_app.infra.api.endpoints.SolicitacaoEndPoint;
 import com.example.iwash_app.infra.api.endpoints.TokenEndPoint;
@@ -13,7 +14,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class APIService {
 
-    public static  final String BASE_URL = "http://192.168.1.7:8000/api/";
+    public static  final String BASE_URL = "http://192.168.15.16:8000/api/";
     public Retrofit retrofit;
     public Interceptor interceptor;
 
@@ -21,6 +22,7 @@ public class APIService {
     public UsuarioEndPoint usuarioEndPoint;
     public LavanderiaEndPoint lavanderiaEndPoint;
     public SolicitacaoEndPoint solicitacaoEndPoint;
+    public ConsumidorEndPoint consumidorEndPoint;
 
     public APIService(String token){
 
@@ -40,6 +42,7 @@ public class APIService {
         usuarioEndPoint = retrofit.create(UsuarioEndPoint.class);
         lavanderiaEndPoint = retrofit.create(LavanderiaEndPoint.class);
         solicitacaoEndPoint = retrofit.create(SolicitacaoEndPoint.class);
+        consumidorEndPoint = retrofit.create(ConsumidorEndPoint.class);
     }
 
 }

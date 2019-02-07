@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.iwash_app.infra.api.APIService;
+import com.example.iwash_app.infra.utils.PreferencesWash;
 import com.example.iwash_app.models.TokenAPIModel;
 import com.example.iwash_app.models.Usuario;
 import com.example.iwash_app.models.UsuarioErrors;
@@ -51,6 +52,10 @@ public class MainActivity extends AppCompatActivity {
             progressBarLogin.setVisibility(View.VISIBLE);
             txtErrosLogin.setVisibility(View.GONE);
             logarUsuario(criarUsuario());
+        } );
+
+        btnCadastreSe.setOnClickListener( onclick->{
+            startActivity(new Intent(this, AddUserActivity.class));
         } );
     }
 
@@ -101,4 +106,5 @@ public class MainActivity extends AppCompatActivity {
         Usuario usuario = new Usuario(editNomeUsuario.getText().toString(), editPassword.getText().toString());
         return usuario;
     }
+
 }

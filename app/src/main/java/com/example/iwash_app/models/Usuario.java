@@ -14,6 +14,12 @@ public class Usuario {
         this.password = password;
     }
 
+    public Usuario(String email,String username, String password){
+        this.username = username;
+        this.password = password;
+        this.email = email;
+    }
+
     public String getUsername() {
         return username;
     }
@@ -26,4 +32,8 @@ public class Usuario {
         return this.id;
     }
 
+    @Override
+    public String toString() {
+        return this.username;
+    }
 }
